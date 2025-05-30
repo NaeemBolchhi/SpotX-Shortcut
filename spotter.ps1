@@ -38,7 +38,7 @@ try {
 	"@echo off" | Out-File -FilePath $FilePath
 	"powershell -File `"spotter.ps1`"" | Out-File -FilePath $FilePath -Append
 	
-	"iex" | Out-File -FilePath $ShellPath
+	"iex" | Out-File -FilePath $ShellPath -NoNewline
 	" `"& { $" | Out-File -FilePath $ShellPath -Append -NoNewline
 	"(" | Out-File -FilePath $ShellPath -Append -NoNewline
 	"iwr" | Out-File -FilePath $ShellPath -Append -NoNewline
