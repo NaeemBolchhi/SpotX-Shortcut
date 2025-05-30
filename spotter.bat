@@ -1,4 +1,3 @@
 @echo off
-setlocal EnableDelayedExpansion
-powershell.exe "./spotx.ps1"
+powershell -File "spotx.ps1"
 pause
