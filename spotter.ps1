@@ -59,4 +59,6 @@ if (Test-Path $FilePath3) {
 }
 
 Write-Host ""
-Write-Host "A shortcut for SpotX was successfully added to Start Menu's Programs folder."
+Write-Host "A shortcut for SpotX was successfully added to Start Menu's Programs folder." -f green
+Write-Host ""
+Write-Host "You can now Pin to Start manually." -f blue
