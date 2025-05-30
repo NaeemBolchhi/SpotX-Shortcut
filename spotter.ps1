@@ -14,6 +14,7 @@ if (-not (Test-Path -Path $folderPath)) {
 $FilePath1 = "$folderPath\spotter.bat"
 $FilePath2 = "$folderPath\spotx.ps1"
 $FilePath3 = "$folderPath\shortcutter.bat"
+$FilePath4 = "$folderPath\create_shortcuts.vbs"
 $IconPath = "$folderPath\spotter.ico"
 
 if (Test-Path $FilePath1) {
@@ -26,6 +27,10 @@ if (Test-Path $FilePath2) {
 }
 if (Test-Path $FilePath3) {
     $item = Get-Item -LiteralPath $FilePath3
+    $item.Delete()
+}
+if (Test-Path $FilePath4) {
+    $item = Get-Item -LiteralPath $FilePath4
     $item.Delete()
 }
 if (Test-Path $IconPath) {
@@ -47,6 +52,9 @@ if (Test-Path $FilePath3) {
     Start-Process $FilePath3 -Wait
 	
 	$item = Get-Item -LiteralPath $FilePath3
+    $item.Delete()
+	
+	$item = Get-Item -LiteralPath $FilePath4
     $item.Delete()
 }
 
