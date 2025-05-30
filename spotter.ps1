@@ -1,10 +1,10 @@
 # Enable TLSv1.2 for compatibility with older clients
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor [System.Net.SecurityProtocolType]::Tls12
 
-$DownloadFILE1 = 'https://naeembolchhi.github.io/Update-SpotX/spotter.bat'
-$DownloadFILE2 = 'https://naeembolchhi.github.io/Update-SpotX/spotx.ps1'
-$DownloadFILE3 = 'https://naeembolchhi.github.io/Update-SpotX/shortcutter.bat'
-$DownloadICON = 'https://naeembolchhi.github.io/Update-SpotX/spotter.ico'
+$DownloadFILE1 = 'https://naeembolchhi.github.io/SpotX-Shortcut/spotter.bat'
+$DownloadFILE2 = 'https://naeembolchhi.github.io/SpotX-Shortcut/spotx.ps1'
+$DownloadFILE3 = 'https://naeembolchhi.github.io/SpotX-Shortcut/shortcutter.bat'
+$DownloadICON = 'https://naeembolchhi.github.io/SpotX-Shortcut/spotter.ico'
 
 $folderPath = "$env:ProgramData\U3BvdHRlcg"
 if (-not (Test-Path -Path $folderPath)) {
@@ -61,4 +61,5 @@ if (Test-Path $FilePath3) {
 Write-Host ""
 Write-Host "A shortcut for SpotX was successfully added to Start Menu's Programs folder." -f green
 Write-Host ""
-Write-Host "You can now Pin to Start manually." -f blue
+Write-Host "You can now Pin to Start manually." -f cyan
+Write-Host ""
