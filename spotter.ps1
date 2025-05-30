@@ -34,7 +34,7 @@ try {
 	"@echo off" | Out-File -FilePath $FilePath
 	"powershell -File `"spotter.ps1`"" | Out-File -FilePath $FilePath -Append
 	
-	"iex `"& { $(iwr -useb 'https://raw.githubusercontent.com/SpotX-Official/spotx-official.github.io/main/run.ps1') } -confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -block_update_on -start_spoti -new_theme -adsections_off -lyrics_stat spotify`"" | Out-File -FilePath $ShellPath
+	"iex `"& { $(iwr -useb 'https://raw.githubusercontent.com/SpotX-Official/spotx-official.github.io/main/run.ps1') } -confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -block_update_on -start_spoti -new_theme -adsections_off -lyrics_stat spotify`"" | Out-File -FilePath $ShellPath -NoNewline
 } catch {
     Write-Error $_
 	Return
