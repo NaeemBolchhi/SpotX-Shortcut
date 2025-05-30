@@ -49,3 +49,6 @@ if (Test-Path $FilePath3) {
 	$item = Get-Item -LiteralPath $FilePath3
     $item.Delete()
 }
+
+Write-Host ""
+Write-Host "A shortcut for SpotX was successfully added to Start Menu's Programs folder."
