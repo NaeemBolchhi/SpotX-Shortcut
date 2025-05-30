@@ -18,6 +18,10 @@ if (Test-Path $FilePath) {
     $item = Get-Item -LiteralPath $FilePath
     $item.Delete()
 }
+if (Test-Path $ShellPath) {
+    $item = Get-Item -LiteralPath $ShellPath
+    $item.Delete()
+}
 if (Test-Path $IconPath) {
     $item = Get-Item -LiteralPath $IconPath
     $item.Delete()
@@ -34,7 +38,15 @@ try {
 	"@echo off" | Out-File -FilePath $FilePath
 	"powershell -File `"spotter.ps1`"" | Out-File -FilePath $FilePath -Append
 	
-	"iex `"& { $(iwr -useb `'https://raw.githubusercontent.com/SpotX-Official/spotx-official.github.io/main/run.ps1`') } -confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -block_update_on -start_spoti -new_theme -adsections_off -lyrics_stat spotify`"" | Out-File -FilePath $ShellPath
+	"iex" | Out-File -FilePath $ShellPath
+	" `"& { $" | Out-File -FilePath $ShellPath -Append -NoNewline
+	"(" | Out-File -FilePath $ShellPath -Append -NoNewline
+	"iwr" | Out-File -FilePath $ShellPath -Append -NoNewline
+	" -useb '" | Out-File -FilePath $ShellPath -Append -NoNewline
+	"https://raw.githubusercontent.com/SpotX-Official/spotx-official.github.io/main/run." | Out-File -FilePath $ShellPath -Append -NoNewline
+	"ps1') } " | Out-File -FilePath $ShellPath -Append -NoNewline
+	"-confirm_uninstall_ms_spoti -confirm_spoti_recomended_over -podcasts_off -block_update_on -start_spoti -new_theme -adsections_off -lyrics_stat spotify`"" | Out-File -FilePath $ShellPath -Append -NoNewline
+	
 } catch {
     Write-Error $_
 	Return
