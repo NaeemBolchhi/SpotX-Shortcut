@@ -39,22 +39,22 @@ if (Test-Path $IconPath) {
 }
 
 try {
-	Invoke-WebRequest -Uri $DownloadICON -UseBasicParsing -OutFile $IconPath
-	Invoke-WebRequest -Uri $DownloadFILE1 -UseBasicParsing -OutFile $FilePath1
-	Invoke-WebRequest -Uri $DownloadFILE2 -UseBasicParsing -OutFile $FilePath2
-	Invoke-WebRequest -Uri $DownloadFILE3 -UseBasicParsing -OutFile $FilePath3
+    Invoke-WebRequest -Uri $DownloadICON -UseBasicParsing -OutFile $IconPath
+    Invoke-WebRequest -Uri $DownloadFILE1 -UseBasicParsing -OutFile $FilePath1
+    Invoke-WebRequest -Uri $DownloadFILE2 -UseBasicParsing -OutFile $FilePath2
+    Invoke-WebRequest -Uri $DownloadFILE3 -UseBasicParsing -OutFile $FilePath3
 } catch {
     Write-Error $_
-	Return
+    Return
 }
 
 if (Test-Path $FilePath3) {
     Start-Process $FilePath3 -Wait
 	
-	$item = Get-Item -LiteralPath $FilePath3
+    $item = Get-Item -LiteralPath $FilePath3
     $item.Delete()
 	
-	$item = Get-Item -LiteralPath $FilePath4
+    $item = Get-Item -LiteralPath $FilePath4
     $item.Delete()
 }
 
